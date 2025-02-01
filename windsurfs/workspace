@@ -1,0 +1,150 @@
+By default, all responses must be in Chinese.
+# AI Code Editor Assistant
+
+Every time you choose to apply a rule(s), explicitly state the rule(s) in the output. You can abbreviate the rule description to a single word or phrase.
+
+## Project Context
+
+This project is a data bridge application that helps manage and transform data.
+
+- Built as a full-stack web application
+- Uses Vue.js for the frontend and Express.js for the backend
+- Integrates with PostgreSQL database through Prisma ORM
+- Provides secure data management and transformation capabilities
+
+## Code Style and Structure
+
+- Write concise, technical TypeScript code with accurate examples
+- Use Vue Composition API with <script setup> syntax
+- Prefer iteration and modularization over code duplication
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError)
+- Split code into logical, focused files:
+  - Keep component files under 250 lines
+  - Extract complex business logic into composables
+  - Move type definitions to separate files in types/
+  - Split large components into smaller sub-components
+  - Move API calls to dedicated service files
+  - Keep Pinia stores focused on specific domains
+  - Use barrel exports (index.ts) to simplify imports
+  - NEVER remove or modify code that is not directly related to the current change
+  - Keep changes minimal and focused on the specific task
+  - Prioritize code robustness and maintainability over minor performance gains
+
+## Tech Stack
+
+- Vue 3.4 with Composition API
+- TypeScript 5.3
+- Vite 5
+- Pinia for state management
+- Tailwind CSS 3
+- Headless UI + Heroicons
+- Express.js backend
+- Prisma ORM
+- PostgreSQL database
+- Zod for runtime validation
+- ESLint + Prettier for code formatting
+- Jest/Vitest for testing
+- Node.js 18+
+
+## Naming Conventions
+
+- Use lowercase with dashes for directories and component files (e.g., components/form-wizard)
+- Use .vue extension for component files (e.g., visa-form.vue)
+- Use camelCase for utility files (e.g., formValidator.ts)
+- Use PascalCase for component names in template refs and imports
+
+## TypeScript Usage
+
+- Use TypeScript for all code; prefer interfaces over types
+- Avoid enums; use const objects with 'as const' assertion
+- Use Vue's defineProps and defineEmits with type arguments
+- Define Pinia store types explicitly
+- Use absolute imports with '@/' prefix (configured in vite.config.ts)
+- Use explicit return types for all functions
+
+## State Management
+
+- Use Pinia stores for global state management
+- Implement composables for reusable stateful logic
+- Use reactive() and ref() appropriately
+- Implement proper cleanup in onUnmounted hooks
+- Use provide/inject for deep component state sharing when needed
+
+## Syntax and Formatting
+
+- Use <script setup> syntax for components
+- Prefer ref/reactive over Options API
+- Use computed properties for derived state
+- Follow Vue's style guide for component organization
+
+## UI and Styling
+
+- Use Headless UI + Heroicons for components
+- Implement Tailwind CSS for styling
+- Use Vue transitions for animations
+- Follow Vue's scoped styling patterns
+
+## Error Handling
+
+- Implement Vue error handlers
+- Use Vue's error boundaries where appropriate
+- Log errors appropriately for debugging
+- Provide user-friendly error messages
+- Handle network failures gracefully
+
+## Testing
+
+- Write unit tests with Vitest
+- Use Vue Test Utils for component testing
+- Test Pinia stores independently
+- Test composables in isolation
+- Implement E2E tests for critical flows
+
+## Security
+
+- Implement Content Security Policy
+- Sanitize user inputs
+- Implement proper authentication and authorization
+- Follow web security best practices
+- Handle sensitive data properly
+- Use environment variables for secrets
+
+## Git Usage
+
+Commit Message Prefixes:
+
+- "fix:" for bug fixes
+- "feat:" for new features
+- "perf:" for performance improvements
+- "docs:" for documentation changes
+- "style:" for formatting changes
+- "refactor:" for code refactoring
+- "test:" for adding missing tests
+- "chore:" for maintenance tasks
+
+Rules:
+
+- Use lowercase for commit messages
+- Keep the summary line concise
+- Include description for non-obvious changes
+- Reference issue numbers when applicable
+
+## Project Structure
+
+src/
+├── assets/ # Static assets
+├── components/ # Vue components
+├── composables/ # Vue composables
+├── router/ # Vue router configuration
+├── stores/ # Pinia stores
+├── types/ # TypeScript types
+├── utils/ # Helper functions
+└── views/ # Page components
+
+server/
+├── src/
+├── controllers/ # Express route handlers
+├── models/ # Prisma models
+├── middleware/ # Express middleware
+├── utils/ # Helper functions
+└── types/ # TypeScript types
